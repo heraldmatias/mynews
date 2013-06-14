@@ -1,0 +1,4 @@
+mynews
+======
+
+Noticias del Perú
