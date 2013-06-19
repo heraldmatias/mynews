@@ -1,0 +1,69 @@
+#jquery-fullsizable {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999;
+}
+
+#jquery-fullsizable #fullsized_image_holder img {
+  display: block;
+  margin: 0 auto;
+}
+#fullsized_go_next {
+    right: 0px;
+    background: url("../img/next.png") repeat scroll 32px 0px transparent;
+}
+#fullsized_go_prev, #fullsized_go_next {
+    position: absolute;
+    top: 40%;
+    display: block;
+    width: 32px;
+    height: 126px;
+}
+
+#fullsized_go_prev:hover {
+    background-position: 0px 126px;
+}
+#fullsized_go_next:hover {
+    background-position: 32px 126px;
+}
+#fullsized_go_prev {
+    left: 0px;
+    background: url("../img/next.png") repeat scroll 0% 0% transparent;
+}
+#fullsized_go_prev, #fullsized_go_next {
+    position: absolute;
+    top: 40%;
+    display: block;
+    width: 32px;
+    height: 126px;
+}
+
+#fullsized_close {
+    right: 0px;
+    background-image: url("../img/close.png");
+}
+
+#fullsized_close:hover {
+    background-position: 0px 32px;
+}
+
+#fullsized_close, #fullsized_fullscreen {
+    top: 0px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+}
+
+#fullsized_fullscreen:hover {
+    background-position: 0px -32px;
+}
+#fullsized_fullscreen {
+    right: 40px;
+    background-image: url("../img/full.png");
+}
