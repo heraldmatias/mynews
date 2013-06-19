@@ -49,9 +49,13 @@
             <div class="span3">
               <h2>{{ portada.diario }}</h2>
               <a href="{{ portada.imagen.url }}">
+                {% comment %}
               {% thumbnail portada.imagen "400x267" as im %}
               <img src="{{ im.url }}" alt="{{ portada.diario }}" title="{{ portada.diario }}" width="100%">
-              {% endthumbnail %}</a>
+              {% endthumbnail %}
+              {% endcomment %}
+              <img src="{{ portada.imagen.url }}" alt="{{ portada.diario }}" title="{{ portada.diario }}" width="100%" height="267">
+              </a>
             </div><!--/span-->
             {% endfor %}
             
