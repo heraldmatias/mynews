@@ -48,8 +48,10 @@
             {% if forloop.counter0|divisibleby:"4" %}{% if forloop.counter0 > 0 %}</div>{% endif %}<div class="row-fluid">{% endif %}
             <div class="span3">
               <h4>{{ portada.diario }}</h4>
-              <a href="{{ portada.imagen.url }}">
-              {% thumbnail portada.imagen "550x250" as im %}
+              {% thumbnail portada.imagen "360x640" as im %}
+              <a href="{{ im.url }}">
+              {% endthumbnail %}
+              {% thumbnail portada.imagen "200x150" as im %}
               <img src="{{ im.url }}" alt="{{ portada.diario }}" title="{{ portada.diario }}" width="100%">
               {% endthumbnail %}
               </a>
