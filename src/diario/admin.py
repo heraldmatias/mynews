@@ -7,7 +7,7 @@ from .models import Diario
 
 
 class DiarioAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'url', 'imagen',)
+    list_display = ('nombre', 'url_ashtml', 'imagen_ashtml')
     
 
 admin.site.register(Diario, DiarioAdmin)

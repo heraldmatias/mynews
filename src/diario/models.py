@@ -2,6 +2,8 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.html import format_html
+from sorl.thumbnail import get_thumbnail
 
 class Diario(models.Model):
     codigo = models.AutoField(primary_key=True,
@@ -25,6 +27,22 @@ class Diario(models.Model):
 
     def __unicode__(self):
     	return u'%s' % self.nombre
+
+    def imagen_ashtml(self):
+        if self.imagen:
+            thumb = get_thumbnail(self.imagen,'80x54', quality=99)
+            return format_html('<img src="{0}" />',
+            thumb.url)
+        return 'Sin Imagen'
+    imagen_ashtml.allow_tags = True
+    imagen_ashtml.short_description = u'Imagen'
+
+    def url_ashtml(self):
+        if self.url:
+            return format_html('<a href="{0}" target="_blank">{0}</a>',self.url)
+        return u'Sin web site'
+    url_ashtml.allow_tags = True
+    url_ashtml.short_description = u'Web Site'
 
     class Meta:
         verbose_name = u'Diario'
