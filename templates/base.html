@@ -43,22 +43,18 @@
     <br>
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span12">
-          <div class="row-fluid" id="portadas">
+        <div class="span12" id="portadas">          
             {% for portada in object_list %}
+            {% if forloop.counter0|divisibleby:"4" %}{% if forloop.counter0 > 0 %}</div>{% endif %}<div class="row-fluid">{% endif %}
             <div class="span3">
-              <h2>{{ portada.diario }}</h2>
+              <h4>{{ portada.diario }}</h4>
               <a href="{{ portada.imagen.url }}">
-                {% comment %}
-              {% thumbnail portada.imagen "400x267" as im %}
+              {% thumbnail portada.imagen "550x250" as im %}
               <img src="{{ im.url }}" alt="{{ portada.diario }}" title="{{ portada.diario }}" width="100%">
               {% endthumbnail %}
-              {% endcomment %}
-              <img src="{{ portada.imagen.url }}" alt="{{ portada.diario }}" title="{{ portada.diario }}" width="100%" height="267">
               </a>
             </div><!--/span-->
             {% endfor %}
-            
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
